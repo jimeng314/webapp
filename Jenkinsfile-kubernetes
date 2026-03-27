@@ -56,7 +56,7 @@ pipeline {
     stage('Build & Tag & Push Docker Image') {
       steps {
         container('kaniko') {
-          sh 'executor --context=dir://$WORKSPACE --destination=jimeng314study/wepapp:$BUILD_NUMBER --destination=jimeng314study/webapp:latest'
+          sh 'executor --context=dir://$WORKSPACE --destination=jimeng314study/webapp:$BUILD_NUMBER --destination=jimeng314study/webapp:latest'
         }
       }
     }
